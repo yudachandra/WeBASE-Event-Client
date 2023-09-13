@@ -53,7 +53,7 @@ public class MQClientListener {
      * @throws IOException
      */
     @SuppressWarnings("unchecked")
-    @RabbitListener(queues = "${spring.rabbitmq.username}")
+    @RabbitListener(queues = "${spring.rabbitmq.queues}")
     public void receive(Channel channel, Message message) throws IOException {
         log.info("++++++++ mq message body: {}, queue:{}", new String(message.getBody()),
                 message.getMessageProperties());
