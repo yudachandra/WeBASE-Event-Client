@@ -1,33 +1,32 @@
-# WeBASE-Event-Client
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://webasedoc.readthedocs.io/zh_CN/latest/docs/WeBASE/CONTRIBUTING.html)
-[![CodeFactor](https://www.codefactor.io/repository/github/webankblockchain/WeBASE-Event-Client/badge)](https://www.codefactor.io/repository/github/webankblockchain/WeBASE-Event-Client)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f5be085401f54e7080a654693ac260d4)](https://www.codacy.com/gh/WeBankBlockchain/WeBASE-Event-Client?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=WeBankBlockchain/WeBASE-Event-Client&amp;utm_campaign=Badge_Grade)
+#WeBASE-Event-Client
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://webasedoc.readthedocs.io/zh_CN/latest/docs /WeBASE/CONTRIBUTING.html)
+[![CodeFactor](https://www.codefactor.io/repository/github/webankblockchain/WeBASE-Event-Client/badge)](https://www.codefactor.io/repository/github/webankblockchain/WeBASE- Event-Client)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f5be085401f54e7080a654693ac260d4)](https://www.codacy.com/gh/WeBankBlockchain/WeBASE-Event-Client?utm_source=github .com&amp;utm_medium=referral&amp;utm_content=WeBankBlockchain/WeBASE-Event-Client&amp;utm_campaign=Badge_Grade)
 [![Code Lines](https://tokei.rs/b1/github/WeBankBlockchain/WeBASE-Event-Client?category=code)](https://github.com/WeBankBlockchain/WeBASE-Event-Client)
 [![license](http://img.shields.io/badge/license-Apache%20v2-blue.svg)](http://www.apache.org/licenses/)
-[![GitHub (pre-)release](https://img.shields.io/github/release/WeBankBlockchain/WeBASE-Event-Client/all.svg)](https://github.com/WeBankBlockchain/WeBASE-Event-Client/releases)
+[![GitHub (pre-)release](https://img.shields.io/github/release/WeBankBlockchain/WeBASE-Event-Client/all.svg)](https://github.com/WeBankBlockchain/WeBASE -Event-Client/releases)
 
 
-WeBASE-Event-Client为客户端事件订阅服务。通过调用[WeBASE-Front](https://github.com/WeBankFinTech/WeBASE-Front)前置服务注册事件监听，获取消息进行处理。
+WeBASE-Event-Client provides client event subscription services. Register event monitoring by calling [WeBASE-Front](https://github.com/WeBankFinTech/WeBASE-Front) front-end service to obtain messages for processing.
 
-- 客户端开发流程：
+- Client development process:
 
-1. 客户端用户向mq-server运维管理员申请账号（用户名和密码、virtual host），运维管理员创建账号，并创建**以appId为名字的队列**，然后赋予该账户read其专属队列的权限（permission-read:queueName）。
+1. The client user applies for an account (user name and password, virtual host) from the mq-server operation and maintenance administrator. The operation and maintenance administrator creates an account and creates a queue named appId, and then assigns the account to read its name. Permissions for exclusive queues (permission-read:queueName).
 
-   运维管理员提供用户名（队列名）和密码、virtual host、消息交换机名（exchangeName）。
+    The operation and maintenance administrator provides the user name (queue name) and password, virtual host, and message exchange name (exchangeName).
 
-2. 客户端调用[WeBASE-Front](https://github.com/WeBankFinTech/WeBASE-Front)前置服务接口注册事件监听。
+2. The client calls [WeBASE-Front](https://github.com/WeBankFinTech/WeBASE-Front) front-end service interface to register event monitoring.
 
-3. 用户在客户端以用户名密码连接到对应的virtual host，监听自己队列的消息（在MQClientListener.java中`@RabbitListener`注解中配置队列名），接收到消息后解析处理。
+3. The user connects to the corresponding virtual host with the username and password on the client, monitors the messages of his own queue (the queue name is configured in the `@RabbitListener` annotation in MQClientListener.java), and parses and processes the messages after receiving them.
 
-- [部署说明](./install.md)
+- [Deployment Instructions](./install.md)
 
-- [接口说明](./interface.md)
+- [Interface Description](./interface.md)
 
-## 贡献说明
-请阅读我们的[贡献文档](<https://webasedoc.readthedocs.io/zh_CN/latest/docs/WeBASE/CONTRIBUTING.html>)，了解如何贡献代码，并提交你的贡献。
+## Contribution instructions
+Please read our [Contribution Documentation](<https://webasedoc.readthedocs.io/zh_CN/latest/docs/WeBASE/CONTRIBUTING.html>) to learn how to contribute code and submit your contribution.
 
-希望在您的参与下，[WeBASE](<https://webasedoc.readthedocs.io/zh_CN/latest/index.html>)会越来越好！
+I hope that with your participation, [WeBASE](<https://webasedoc.readthedocs.io/zh_CN/latest/index.html>) will get better and better!
 
-## 社区
-联系我们：webase@webank.com
-
+## Community
+Contact us: webase@webank.com
