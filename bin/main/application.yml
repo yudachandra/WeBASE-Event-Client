@@ -4,7 +4,8 @@ spring:
     port: 5672
     username: admin_cxr_secondary
     password: Abcd12345
-    virtual-host:
+    virtual-host: cxr
+    queues: briva-event
     listener:
       simple:
         acknowledge-mode: manual
